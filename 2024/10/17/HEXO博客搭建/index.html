@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="1" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>HEXO博客搭建 |  Difory</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/rss2.xml" title="Difory" type="application/rss+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-HEXO博客搭建"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  HEXO博客搭建
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/10/17/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="article-date">
+  <time datetime="2024-10-16T16:00:00.000Z" itemprop="datePublished">2024-10-17</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">3.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">13 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h2><h3 id="1-基础服务"><a href="#1-基础服务" class="headerlink" title="1.基础服务"></a>1.基础服务</h3><blockquote>
+<p>服务器环境：Centos9、yum</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">yum install node</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新增文件夹 博客目录</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建空文件夹 执行 hexo init blog 文件 复制到 原来的文件夹里</span></span><br><span class="line">mkdir blog</span><br><span class="line"></span><br><span class="line">hexo init blog</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者使用简写</span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><h4 id="2-1-创建文章"><a href="#2-1-创建文章" class="headerlink" title="2.1 创建文章"></a>2.1 创建文章</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建一篇新文章</span></span><br><span class="line">hexo new &quot;主页&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-主题"><a href="#2-2-主题" class="headerlink" title="2.2 主题"></a>2.2 主题</h4><p>选择一个 Hexo 主题，例如 Ayer。安装并应用到你的 Hexo 博客。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 Ayer 主题</span></span><br><span class="line">npm install hexo-theme-ayer --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者对于 Hexo 版本低于 5.0</span></span><br><span class="line">git clone https://gitee.com/mirrors/ayer.git themes/ayer</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在 _config.yml 中设置主题</span></span><br><span class="line">theme: ayer</span><br></pre></td></tr></table></figure>
+
+<p><strong>自定义主题</strong></p>
+<p>根据你选择的主题，编辑主题的配置文件来自定义你的博客。例如，Ayer 主题的配置文件通常位于 <code>themes/ayer/_config.yml</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开主题配置文件进行自定义</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">themes/ayer/_config.yml</span></span><br></pre></td></tr></table></figure>
+
+<p>配置参考</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 侧边栏菜单</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags</span></span><br><span class="line">  <span class="string">旅行:</span> <span class="string">/tags/旅行/</span></span><br><span class="line">  <span class="string">壁纸:</span> <span class="string">https://wallpaper.seenav.cn/</span></span><br><span class="line">  <span class="string">友链:</span> <span class="string">/friends</span></span><br><span class="line">  <span class="string">关于我:</span> <span class="string">/2022/01/01/关于我/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 站点次标题和打字动效</span></span><br><span class="line"><span class="comment"># https://github.com/mattboldt/typed.js</span></span><br><span class="line"><span class="attr">subtitle:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 是否开启动效</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">面朝大海，春暖花开</span> <span class="comment"># 显示的文字</span></span><br><span class="line">  <span class="attr">text2:</span> <span class="string">一生努力，一生被爱</span> <span class="comment"># 滚动播放，如果不需要可以留空</span></span><br><span class="line">  <span class="attr">text3:</span> <span class="string">想要的都拥有，得不到的都释怀</span> <span class="comment"># 最多支持三段文字</span></span><br><span class="line">  <span class="attr">startDelay:</span> <span class="number">0</span> <span class="comment"># 延迟时间</span></span><br><span class="line">  <span class="attr">typeSpeed:</span> <span class="number">200</span> <span class="comment"># 打字速度</span></span><br><span class="line">  <span class="attr">loop:</span> <span class="literal">true</span> <span class="comment"># 是否循环</span></span><br><span class="line">  <span class="attr">backSpeed:</span> <span class="number">100</span> <span class="comment"># 回退速度</span></span><br><span class="line">  <span class="attr">showCursor:</span> <span class="literal">true</span> <span class="comment"># 是否显示光标</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站图标和侧边栏logo</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/blog/favicon.ico</span></span><br><span class="line"><span class="attr">logo:</span> <span class="string">/blog/images/ayer.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 封面配置</span></span><br><span class="line"><span class="comment"># enable-是否启用封面；path-封面背景图；logo-封面logo</span></span><br><span class="line"><span class="attr">cover:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">/blog/images/cover1.jpg</span> <span class="comment"># /source/images目录下附送多张美图，可更换</span></span><br><span class="line">  <span class="attr">logo:</span> <span class="literal">false</span> <span class="comment">#/images/ayer.svg，如果不要直接设置成false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 页面顶部进度条</span></span><br><span class="line"><span class="attr">progressBar:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 告示板模块</span></span><br><span class="line"><span class="attr">broadcast:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># true开启，false关闭</span></span><br><span class="line">  <span class="attr">type:</span> <span class="number">2</span> <span class="comment"># 1：自定义输入，2：一言api(https://hitokoto.cn/)</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">一个安静优雅的hexo主题，快速且响应式。</span> <span class="comment"># type为1时有效</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章配置</span></span><br><span class="line"><span class="comment"># 文章太长，截断按钮文字(在需要截断的行增加此标记：&lt;!--more--&gt;)</span></span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="string">阅读更多...</span></span><br><span class="line"><span class="comment"># 如果你嫌每篇文章手动加more标记比较麻烦，又不想在首页全文显示，可以把excerpt_all设置成true，这样首页只会显示文章归档</span></span><br><span class="line"><span class="attr">excerpt_all:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启代码复制按钮</span></span><br><span class="line"><span class="attr">copy_btn:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 是否开启文章分享按钮</span></span><br><span class="line"><span class="attr">share_enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 国内的社交平台(If you are not in China, maybe you prefer to set:false)</span></span><br><span class="line"><span class="attr">share_china:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 文章分享文字</span></span><br><span class="line"><span class="attr">share_text:</span> <span class="string">分享</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分页文字</span></span><br><span class="line"><span class="attr">nav_text:</span></span><br><span class="line">  <span class="attr">page_prev:</span> <span class="string">上一页</span></span><br><span class="line">  <span class="attr">page_next:</span> <span class="string">下一页</span></span><br><span class="line">  <span class="attr">post_prev:</span> <span class="string">上一篇</span></span><br><span class="line">  <span class="attr">post_next:</span> <span class="string">下一篇</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章页是否显示目录</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章中的图片是否支持点击放大</span></span><br><span class="line"><span class="attr">image_viewer:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># https://github.com/willin/hexo-wordcount</span></span><br><span class="line"><span class="comment"># 是否开启字数统计(关闭请设置enable为false)</span></span><br><span class="line"><span class="comment"># 也可以单独在md文件里Front-matter设置`no_word_count: true`属性，来自定义关闭字数统计</span></span><br><span class="line"><span class="attr">word_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 只在文章详情显示(不在首页显示)</span></span><br><span class="line">  <span class="attr">only_article_visit:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">&quot;请我喝杯奶茶吧~&quot;</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置logo的方式一样。比如：/images/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> <span class="string">/images/alipay.jpg</span></span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/images/wechat.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 版权声明</span></span><br><span class="line"><span class="comment"># 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明</span></span><br><span class="line"><span class="attr">copyright_type:</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否启用搜索</span></span><br><span class="line"><span class="comment"># 需要安装hexo-generator-searchdb(https://github.com/theme-next/hexo-generator-searchdb)</span></span><br><span class="line"><span class="attr">search:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># RSS订阅(先安装hexo-generator-feed插件，再去博客根目录config进行配置)</span></span><br><span class="line"><span class="comment"># 不想显示可以直接留空</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否启用黑夜模式开关</span></span><br><span class="line"><span class="attr">darkmode:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态背景效果: 0-关闭，1-动态线条(跟随鼠标)</span></span><br><span class="line"><span class="attr">canvas_bg:</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义鼠标样式，直接替换/images/mouse.cur文件</span></span><br><span class="line"><span class="attr">mouse:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">/blog/images/mouse.cur</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 鼠标点击效果：0-关闭，1-爱心，2-爆炸烟花，3-粒子烟花</span></span><br><span class="line"><span class="attr">click_effect:</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 页面宽度自定义（不建议修改，可能造成布局混乱），article_width文章宽度，sidebar_width侧边栏宽度</span></span><br><span class="line"><span class="attr">layout:</span></span><br><span class="line">  <span class="attr">article_width:</span> <span class="string">80rem</span></span><br><span class="line">  <span class="attr">sidebar_width:</span> <span class="string">8rem</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># GitHub Ribbons-封面右上角的forkme，换样式直接在source/images目录下替换forkme图片</span></span><br><span class="line"><span class="attr">github:</span></span><br><span class="line">  <span class="comment"># (关闭请设置为false)</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">https://gitee.com/bestwishes0203</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网易云音乐插件</span></span><br><span class="line"><span class="attr">music:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 播放器尺寸类型(1：小尺寸、2：大尺寸)</span></span><br><span class="line">  <span class="attr">type:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">id:</span> <span class="number">1497588709</span> <span class="comment"># 网易云分享的音乐ID(更换音乐请更改此配置项)</span></span><br><span class="line">  <span class="attr">autoPlay:</span> <span class="literal">false</span> <span class="comment"># 是否开启自动播放</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问量统计(不蒜子)</span></span><br><span class="line"><span class="attr">busuanzi:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 友盟cnzz统计(url填js代码src链接)</span></span><br><span class="line"><span class="attr">cnzz:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Google Analytics</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="comment"># 百度统计</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Mathjax数学公式</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Katex数学公式(allpost设置为false时只有头部设置math:true的文章才开启)</span></span><br><span class="line"><span class="comment"># 需要更换hexo渲染器，npm un hexo-renderer-marked -S &amp;&amp; npm i hexo-renderer-markdown-it-katex -S</span></span><br><span class="line"><span class="attr">katex:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span> <span class="comment"># true</span></span><br><span class="line">  <span class="attr">allpost:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mermaid流程图 三个选项缺一不可(https://mermaid-js.github.io/mermaid/)</span></span><br><span class="line"><span class="attr">mermaid:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">cdn:</span> <span class="string">https://cdn.staticfile.org/mermaid/8.14.0/mermaid.min.js</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">forest</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站成立年份(默认为 2019，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)</span></span><br><span class="line"><span class="attr">since:</span> <span class="number">2022</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ICP备案信息尾部显示</span></span><br><span class="line"><span class="attr">icp:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">&quot;https://beian.miit.gov.cn/&quot;</span> <span class="comment"># 备案链接</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">&quot;浙ICP备88888888&quot;</span> <span class="comment"># 备案信息</span></span><br><span class="line"><span class="comment"># 公安备案信息尾部显示</span></span><br><span class="line"><span class="attr">gongan:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">img:</span> <span class="string">/images/beian.png</span> <span class="comment">#公安备案图片</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">&quot;http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=01234567890123&quot;</span> <span class="comment">#公安备案链接</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">&quot;浙公网安备01234567890123号&quot;</span> <span class="comment">#公安备案信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 友情链接</span></span><br><span class="line"><span class="attr">friends_link:</span></span><br><span class="line">  <span class="comment"># Ayer主题: #网站名称</span></span><br><span class="line">  <span class="comment">#   #网站地址</span></span><br><span class="line">  <span class="comment">#   url: https://github.com/Shen-Yu/hexo-theme-ayer</span></span><br><span class="line">  <span class="comment">#   #网站图片(可忽略不写)</span></span><br><span class="line">  <span class="comment">#   img: /images/ayer.png</span></span><br><span class="line">  <span class="string">Hexo官网:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://hexo.io</span></span><br><span class="line">    <span class="attr">img:</span> <span class="string">/images/hexo.png</span></span><br><span class="line">  <span class="string">Hexo图表插件:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/Shen-Yu/hexo-tag-chart</span></span><br><span class="line">    <span class="attr">img:</span> <span class="string">/images/hexo-tag-chart.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 评论：1、Valine(推荐)；2、Gitalk；3、Twikoo;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1、Valine[一款快速、简洁且高效的无后端评论系统](https://github.com/xCss/Valine)</span></span><br><span class="line"><span class="comment"># 启用Valine必须先创建leancloud应用， 获取 id|key 填入即可</span></span><br><span class="line"><span class="attr">leancloud:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">app_id:</span> <span class="comment">#</span></span><br><span class="line">  <span class="attr">app_key:</span> <span class="comment">#</span></span><br><span class="line"><span class="comment"># Valine配置</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span> <span class="comment"># 是否启用</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">monsterid</span> <span class="comment"># 头像样式(https://valine.js.org/avatar.html)</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">给我的文章加点评论吧~</span> <span class="comment"># placeholder</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、Gitalk(https://github.com/gitalk/gitalk)</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span> <span class="comment"># true</span></span><br><span class="line">  <span class="attr">clientID:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">clientSecret:</span> <span class="comment"># Client Secret</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name</span></span><br><span class="line">  <span class="attr">owner:</span> <span class="comment"># GitHub ID</span></span><br><span class="line">  <span class="attr">admin:</span> <span class="comment"># GitHub ID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3、Twikoo(https://github.com/imaegoo/twikoo)</span></span><br><span class="line"><span class="attr">twikoo:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">envId:</span> <span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 首页广告配置</span></span><br><span class="line"><span class="comment"># 可以根据需要自行增加ad_3，ad_4...，留空则不显示，建议图片和url不要带ad等关键词，否则可能会被adblock等插件屏蔽</span></span><br><span class="line"><span class="comment"># ads:</span></span><br><span class="line"><span class="comment">#   ad_1:</span></span><br><span class="line"><span class="comment">#     title: 云服务器限时秒杀</span></span><br><span class="line"><span class="comment">#     img: https://pic.imgdb.cn/item/62174b452ab3f51d912a5ccc.jpg</span></span><br><span class="line"><span class="comment">#     url: https://curl.qcloud.com/kvO7hb43</span></span><br><span class="line"><span class="comment">#     width: 300</span></span><br><span class="line"><span class="comment">#   ad_2:</span></span><br><span class="line"><span class="comment">#     title: vultr优惠vps</span></span><br><span class="line"><span class="comment">#     img: https://pic.imgdb.cn/item/62174b452ab3f51d912a5cd7.png</span></span><br><span class="line"><span class="comment">#     url: https://www.vultr.com/?ref=8630075</span></span><br><span class="line"><span class="comment">#     width: 300</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站开启加密访问，密码可设置任何字符</span></span><br><span class="line"><span class="attr">lock:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">password:</span> <span class="number">123456</span></span><br></pre></td></tr></table></figure>
+
+<p>这里还可以替换博客<code>themes</code>文件夹下的静态文件来美化自己的博客。</p>
+<h3 id="3-部署Gitee"><a href="#3-部署Gitee" class="headerlink" title="3.部署Gitee"></a>3.部署Gitee</h3><p>在 <code>_config.yml</code> 文件中配置 Gitee 仓库信息，并部署博客。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##############################   准备工作   ######################################</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置 Git 用户名和邮箱</span></span><br><span class="line">git config --global user.name &quot;your-gitee-username&quot;</span><br><span class="line">git config --global user.email &quot;your-email@example.com&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成 SSH 密钥</span></span><br><span class="line">ssh-keygen -t ed25519 -C &quot;Gitee SSH Key&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加 SSH 公钥到 Gitee 账户</span></span><br><span class="line">cat ~/.ssh/id_ed25519.pub</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试 SSH 连接</span></span><br><span class="line">ssh -T git@gitee.com</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 Hexo 部署插件（安装一次即可）</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##############################   部署    ######################################</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">清理缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成博客内容</span></span><br><span class="line">hexo g</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动本地服务器预览博客（可选）</span></span><br><span class="line">hexo server</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">简写</span></span><br><span class="line">hexo s</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署博客</span></span><br><span class="line">hexo deploy</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">简写</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>如何生成 SSH 密钥： <a target="_blank" rel="noopener" href="https://help.gitee.com/base/account/SSH%E5%85%AC%E9%92%A5%E8%AE%BE%E7%BD%AE">生成 SSH 密钥</a></p>
+<p>确保将 <code>your-gitee-username</code> 和 <code>your-repo</code> 替换为你在 Gitee 上的用户名和仓库名。</p>
+<p>如果部署不上去可能是博客跟目录下的 <code>_congif.yml</code> 中<code>deploy&gt;repo</code>没有修改为自己的地址。</p>
+<p>最后,在Gitee仓库中开启 <code>Gitee Pages</code> 服务并且更新内容。</p>
+<p>添加或修改博客内容之后，重复 <code>步骤8</code> 即可更新到线上。</p>
+<h3 id="4-虚拟机-文件夹-共享"><a href="#4-虚拟机-文件夹-共享" class="headerlink" title="4. 虚拟机 文件夹 共享"></a>4. 虚拟机 文件夹 共享</h3><blockquote>
+<p>本来打算在虚拟机里搭建环境，后来想了想还是本地方便，所以这个环节可以跳过。。</p>
+</blockquote>
+<h4 id="4-1-创建共享文件夹"><a href="#4-1-创建共享文件夹" class="headerlink" title="4.1 创建共享文件夹"></a>4.1 创建共享文件夹</h4><p>vmware上点击设置，进入虚拟机设置，点击选项，共享文件夹，选择总是启动，添加</p>
+<p>主机路径，物理机上要分享的文件夹路径，这里我设置为 <code>D:\test_shared</code></p>
+<p>名称，要在虚拟机上显示的名称,，这里我设置为 <code>VM-centos-share</code></p>
+<p>打开CentOS终端，输入命令，查看共享文件夹情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmware-hgfsclient</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-挂载共享目录"><a href="#4-2-挂载共享目录" class="headerlink" title="4.2 挂载共享目录"></a>4.2 挂载共享目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑</span></span><br><span class="line">gedit  /etc/fstab </span><br><span class="line"></span><br><span class="line"><span class="comment"># 在文件末尾上加上</span></span><br><span class="line">.host:/VM-centos-share /mnt/hgfs fuse.vmhgfs-fuse allow_other,defaults 0 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其中 VM-centos-share 是共享文件夹的名字 /mnt/hgfs 是centos中的路径</span></span><br></pre></td></tr></table></figure>
+
+<p>保存重启即可</p>
+<p>如果centos系统因权限无法查看共享文件夹内容，修改权限，777为最高权限。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 777 /mnt/hgfs</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-网站评论系统-Twikoo"><a href="#5-网站评论系统-Twikoo" class="headerlink" title="5.网站评论系统 Twikoo"></a>5.网站评论系统 Twikoo</h3><p><a target="_blank" rel="noopener" href="https://twikoo.js.org/">https://twikoo.js.org/</a></p>
+<h4 id="5-1-MongoDB-Atlas"><a href="#5-1-MongoDB-Atlas" class="headerlink" title="5.1 MongoDB Atlas"></a>5.1 MongoDB Atlas</h4><p>MongoDB Atlas 是 MongoDB Inc 提供的 MongoDB 数据库托管服务。免费账户可以永久使用 500 MiB 的数据库，足够存储 Twikoo 评论使用。</p>
+<ol>
+<li><p>创建免费 MongoDB 数据库，区域推荐选择离 Twikoo 后端（Vercel &#x2F; Netlify &#x2F; AWS Lambda &#x2F; VPS）地理位置较近的数据中心以获得更低的数据库连接延迟。如果不清楚自己的后端在哪个区域，也可选择 <code>AWS / Oregon (us-west-2)</code>，该数据中心基建成熟，故障率低，且使用 Oregon 州的清洁能源，较为环保。</p>
+<p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20241016201016170.png" alt="image-20241016201016170"></p>
+</li>
+<li><p>在 Database Access 页面点击 Add New Database User 创建数据库用户，Authentication Method 选 Password，在 Password Authentication 下设置数据库用户名和密码，建议点击 Auto Generate 自动生成一个不含特殊符号的强壮密码并妥善保存。点击 Database User Privileges 下方的 Add Built In Role，Select Role 选择 Atlas Admin，最后点击 Add User</p>
+</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XXXbloXXXXXXX</span><br><span class="line">INjsgzJXXXXXXXXXXX</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20241016200301861.png" alt="image-20241016200301861"></p>
+<ol start="3">
+<li>在 Network Access 页面点击 Add IP Address 添加网络白名单。因为 Vercel &#x2F; Netlify &#x2F; Lambda 的出口地址不固定，因此 Access List Entry 输入 <code>0.0.0.0/0</code>（允许所有 IP 地址的连接)即可。如果 Twikoo 部署在自己的服务器上，这里可以填入固定 IP 地址。点击 Confirm 保存</li>
+</ol>
+<p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20241016200315905.png" alt="image-20241016200315905"></p>
+<ol start="4">
+<li>在 Database 页面点击 Connect，连接方式选择 Drivers，并记录数据库连接字符串，请将连接字符串中的 <code>&lt;username&gt;:&lt;password&gt;</code> 修改为刚刚创建的数据库 <code>用户名:密码</code> 要手动替换成您设置的密码 ; 填写密码时去掉两侧的尖括号 &lt; &gt;</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodb+srv://blog_CVVVVVVVVVVVVVVVVVVVVVVV@blog.znxuq.mongodb.net/?retryWrites=true&amp;w=majority&amp;appName=blog</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>（可选）默认的连接字符串没有指定数据库名称，Twikoo 会连接到默认的名为 <code>test</code> 的数据库。如果需要在同一个 MongoDB 里运行其他业务或供多个 Twikoo 实例使用，建立加入数据库名称并配置对应的 ACL。</li>
+</ol>
+<p>连接字符串包含了连接到 MongoDB 数据库的所有信息，一旦泄露会导致评论被任何人添加、修改、删除，并有可能获取你的 SMTP、图床 token 等信息。请妥善记录这一字符串，之后需要填入到 Twikoo 的部署平台里。</p>
+<h4 id="5-2-云函数部署-Vercel-部署"><a href="#5-2-云函数部署-Vercel-部署" class="headerlink" title="5.2 云函数部署 Vercel 部署"></a>5.2 云函数部署 Vercel 部署</h4><ol>
+<li><p>申请 <a target="_blank" rel="noopener" href="https://twikoo.js.org/mongodb-atlas.html">MongoDB Atlas</a> 账号，获取 MongoDB 连接字符串</p>
+</li>
+<li><p>申请 <a target="_blank" rel="noopener" href="https://vercel.com/signup">Vercel</a> 账号</p>
+</li>
+<li><p>点击以下按钮将 Twikoo 一键部署到 Vercel</p>
+<p><a target="_blank" rel="noopener" href="https://vercel.com/import/project?template=https://github.com/twikoojs/twikoo/tree/main/src/server/vercel-min">https://vercel.com/import/project?template=https://github.com/twikoojs/twikoo/tree/main/src/server/vercel-min</a></p>
+</li>
+<li><p>进入 Settings - Environment Variables，添加环境变量 <code>MONGODB_URI</code>，值为前面记录的数据库连接字符串</p>
+</li>
+<li><p>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save</p>
+</li>
+<li><p>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy , 最后点击下面的 Redeploy</p>
+</li>
+<li><p>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示</p>
+</li>
+<li><p>Vercel Domains（包含 <code>https://</code> 前缀，例如 <code>https://xxx.vercel.app</code>）即为您的环境 id</p>
+</li>
+</ol>
+<p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20241016205131796.png" alt="image-20241016205131796"></p>
+<p>url: <strong><a target="_blank" rel="noopener" href="https://twikoojsvercelxxxxxxxxxxxxxx.vercel.app/">https://twikoojsvercelXXXXXXXXXXXXXX.vercel.app</a></strong></p>
+<h4 id="5-3-Hexo-配置文件"><a href="#5-3-Hexo-配置文件" class="headerlink" title="5.3 Hexo 配置文件"></a>5.3 Hexo 配置文件</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3、Twikoo(https://github.com/imaegoo/twikoo)</span></span><br><span class="line"><span class="attr">twikoo:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">envId:</span> <span class="string">https://twikoojsvercel-XXXXXXXXXXXXXXXXXXXX.vercel.app</span></span><br></pre></td></tr></table></figure>
+
+<p>最终效果：</p>
+<p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20241016210322342.png" alt="image-20241016210322342"></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/10/17/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Twikoo/" rel="tag">Twikoo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2024/10/16/zookeeper/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Zookeeper 更新中</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: "https://twikoojsvercel-lgnqwc1hk-diforys-projects.vercel.app"
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2024
+        <i class="ri-heart-fill heart_icon"></i> wang kx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Difory"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>感谢投喂！</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
